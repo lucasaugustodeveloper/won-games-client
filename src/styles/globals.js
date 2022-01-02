@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -35,17 +35,17 @@ const GlobalStyle = createGlobalStyle`
         url('/fonts/poppins-v15-latin-600.woff2') format('woff2');
   }
 
-  html {
-    font-size: 62.5%;
-  }
+  ${({ theme }) => css`
+    html {
+      font-size: 62.5%;
+    }
 
-  html, body, #__next {
-    height: 100%;
-  }
+    body {
+      font-family: ${theme.font.family};
+      font-size: ${theme.font.sizes.medium};
+    }
+  `}
 
-  body {
-    font-family: 'Poppins', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
 `
 
 export default GlobalStyle
