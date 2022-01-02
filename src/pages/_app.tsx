@@ -1,13 +1,15 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from 'styles/globals'
+import theme from 'styles/themes'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
-        <title>React Avançado Boilerplate</title>
+        <title>Won Games</title>
         <link rel="shortcut icon" href="/img/icon-192.png" />
         <link rel="shortcut icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -20,7 +22,7 @@ function App({ Component, pageProps }: AppProps) {
       <GlobalStyles />
 
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }
 
