@@ -9,12 +9,22 @@ export default {
     color: {
       options: ['black', 'white'],
       control: { type: 'select' }
+    },
+    size: {
+      options: ['normal', 'large'],
+      control: { type: 'select' }
+    },
+    hideOnMobile: {
+      options: [true, false],
+      control: { type: 'boolean' }
     }
   }
 } as Meta
 
 export const Basic = {
   args: {
-    color: 'black'
+    color: 'black',
+    size: 'normal',
+    hideOnMobile: false
   }
 }
